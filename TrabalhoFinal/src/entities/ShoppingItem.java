@@ -42,6 +42,18 @@ public class ShoppingItem {
                 + ", quantidade = " + quant 
                 + '}';
     }
+
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        
+        final Product other = (Product) obj;
+        return this.id == other.id;
+    }
     
     
 }
