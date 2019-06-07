@@ -16,6 +16,7 @@ import java.util.List;
 public class ShoppingBasquet {
     List <ShoppingItem> cestaDeCompras = new ArrayList<>();
     
+    //Chamar metodo compra do Product na classe acima.
 
     public void AddShopItens(Product p, int quant){
         boolean jaComp = false;
@@ -46,6 +47,8 @@ public class ShoppingBasquet {
     public void apagarShopItens(Product p){
         for(ShoppingItem si: cestaDeCompras){
             if(si.equals((Object)p)){
+                int quant = p.getQuantEmEstok();
+                p.setQuantEmEstok( quant + si.getQuant());
                 cestaDeCompras.remove(si);
             }
         }
@@ -56,9 +59,19 @@ public class ShoppingBasquet {
             for(ShoppingItem si: cestaDeCompras){
                 if(si.equals((Object)p)){
                     if(quant > 0){
-                        si.setQuant(quant);
+                        int siQuant = si.getQuant();
+                        p.setQuantEmEstok(p.getQuantEmEstok()+si.getQuant());
+                        boolean flag;
+                        flag = p.comprar(quant);
+                        if(flag){
+                            si.setQuant(quant);
+                        }else{
+                            p.setQuantEmEstok(p.getQuantEmEstok()-siQuant);
+                            si.setQuant(siQuant);
+                        }
+                        
                     }else if(quant == 0){
-                        cestaDeCompras.remove(si);
+                        this.apagarShopItens(p);
                     }
                 }
             }

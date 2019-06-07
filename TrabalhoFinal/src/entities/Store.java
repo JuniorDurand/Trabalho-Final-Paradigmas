@@ -11,15 +11,17 @@ import java.util.Scanner;
  *
  * @author junior.durand
  */
-public class Story {
+public class Store {
     Scanner input = new Scanner(System.in);
     
     public String nome;
     public ShoppingBasquet cesta;
     public Catalogue catalogo;
     
-    public Story(String nome) {
+    public Store(String nome) {
         this.nome = nome;
+        cesta = new ShoppingBasquet();
+        catalogo = new Catalogue();
     }
   
     public String getNome() {
@@ -32,6 +34,14 @@ public class Story {
     
     public String mostrarCatalogo(){
         return this.catalogo.mostraItens();
+    }
+    
+    public Product procurarCatalogo(String nome){
+        return this.catalogo.procurarItem(nome);
+    }
+    
+    public Product procurarCatalogo(int id){
+        return this.catalogo.procurarItem(id);
     }
     
     public String mostrarCesta(){
@@ -52,8 +62,10 @@ public class Story {
         int quantiEstk;
         System.out.println("Digite o ID do Produto");
         id = input.nextInt();
+        input.nextLine();
         System.out.println("Digite o nome do Produto");
         nomeProdc = input.nextLine();
+        //input.nextLine();
         System.out.println("Digite o valor do Produto");
         valor = input.nextDouble();
         System.out.println("Digite a quantidade em estoque do Produto");
