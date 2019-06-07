@@ -38,8 +38,8 @@ public class ShoppingItem {
     @Override
     public String toString() {
         return "ShoppingItem{" 
-                + "id = " + id 
-                + ", quantidade = " + quant 
+                + "id = " + this.id 
+                + ", quantidade = " + this.quant 
                 + '}';
     }
 

@@ -58,7 +58,7 @@ public class Product {
     public boolean comprar(int quant){
         if(quant>0){
             if(quant <= this.quantEmEstok){
-                this.quantEmEstok = quant - this.quantEmEstok;
+                this.quantEmEstok = this.quantEmEstok - quant;
                 return true;
             }else{
                 System.out.println("Quantidade indisponivel");
