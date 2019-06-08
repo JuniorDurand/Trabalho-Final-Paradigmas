@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package entities;
 
 /**
@@ -11,6 +10,7 @@ package entities;
  * @author durand
  */
 public class ShoppingItem {
+
     public int id;
     public int quant;
 
@@ -37,23 +37,20 @@ public class ShoppingItem {
 
     @Override
     public String toString() {
-        return "ShoppingItem{" 
-                + "id = " + this.id 
-                + ", quantidade = " + this.quant 
+        return "ShoppingItem{"
+                + "id = " + this.id
+                + ", quantidade = " + this.quant
                 + '}';
     }
-
-
 
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
             return false;
         }
-        
+
         final Product other = (Product) obj;
         return this.id == other.id;
     }
-    
-    
+
 }
