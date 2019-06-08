@@ -80,7 +80,7 @@ public class Main {
                     p = loja.procurarCatalogo(nome);
                     loja.ModificarCesta(p, quant);
                     loja.mostrarCesta();
-                    
+
             }
 
         } while (opcao != 0);

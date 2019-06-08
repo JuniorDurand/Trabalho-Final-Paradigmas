@@ -12,18 +12,19 @@ import java.util.Scanner;
  * @author junior.durand
  */
 public class Store {
+
     Scanner input = new Scanner(System.in);
-    
+
     public String nome;
     public ShoppingBasquet cesta;
     public Catalogue catalogo;
-    
+
     public Store(String nome) {
         this.nome = nome;
         cesta = new ShoppingBasquet();
         catalogo = new Catalogue();
     }
-  
+
     public String getNome() {
         return nome;
     }
@@ -31,31 +32,36 @@ public class Store {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    
-    public String mostrarCatalogo(){
+
+    public String mostrarCatalogo() {
         return this.catalogo.mostraItens();
     }
-    
-    public Product procurarCatalogo(String nome){
+
+    public Product procurarCatalogo(String nome) {
         return this.catalogo.procurarItem(nome);
     }
-    
-    public Product procurarCatalogo(int id){
+
+    public Product procurarCatalogo(int id) {
         return this.catalogo.procurarItem(id);
     }
     
-    public String mostrarCesta(){
+
+    public String mostrarCesta() {
         return this.cesta.MostrarShopItens();
     }
-    
-    public void adicionarNaCesta(Product p, int x){
-        if(p.comprar(x)){
+
+    public void adicionarNaCesta(Product p, int x) {
+        if (p.comprar(x)) {
             this.cesta.AddShopItens(p, x);
         }
     }
-    
-    public void adicionarNoCatalogo(){
-        
+
+    public void ModificarCesta(Product p, int x) {
+        this.cesta.ModificarQuant(p, x);
+    }
+
+    public void adicionarNoCatalogo() {
+
         int id;
         String nomeProdc;
         double valor;
@@ -74,13 +80,12 @@ public class Store {
         p = new Product(id, nomeProdc, valor, quantiEstk);
         this.catalogo.inserirItem(p);
     }
-    
-    public void fecharCompra(){
-        ShoppingBasquet cestaFechada  = this.cesta;
+
+    public void fecharCompra() {
+        ShoppingBasquet cestaFechada = this.cesta;
         this.cesta = null;
         //chamar função para colocar a cesta no arquivo
         //e colocar o delivery;
     }
-    
 
 }
