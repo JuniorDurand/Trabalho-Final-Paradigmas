@@ -52,10 +52,11 @@ public class ShoppingBasquet {
         }
     }
 
-    public void ModificarQuant(Product p, int quant) {
+    public boolean ModificarQuant(Product p, int quant) {
         if (quant >= 0) {
             for (ShoppingItem si : cestaDeCompras) {
-                if (si.equals((Object) p)) {
+                
+                if (si.equals(p)) {
                     if (quant > 0) {
                         int siQuant = si.getQuant();
                         p.setQuantEmEstok(p.getQuantEmEstok() + si.getQuant());
@@ -68,11 +69,16 @@ public class ShoppingBasquet {
                             si.setQuant(siQuant);
                         }
                     } else if (quant == 0) {
-                        this.apagarShopItens(p);
+                        //this.apagarShopItens(p);
+                        int quantEstk = p.getQuantEmEstok();
+                        p.setQuantEmEstok(quantEstk + si.getQuant());
+                        cestaDeCompras.remove(si);
                     }
+                    return true;
                 }
             }
         }
+        return false;
     }
 
 }

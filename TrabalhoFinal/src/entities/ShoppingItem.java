@@ -43,14 +43,14 @@ public class ShoppingItem {
                 + '}';
     }
 
-    @Override
-    public boolean equals(Object obj) {
+
+    public boolean equals(Product obj) {
         if (obj == null) {
             return false;
         }
 
-        final Product other = (Product) obj;
-        return this.id == other.id;
+
+        return this.id == obj.getId();
     }
 
 }
