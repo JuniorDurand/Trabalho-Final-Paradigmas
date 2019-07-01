@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class ShoppingBasquet {
 
-    List<ShoppingItem> cestaDeCompras = new ArrayList<>();
+    protected List<ShoppingItem> cestaDeCompras = new ArrayList<>();
 
     //Chamar metodo compra do Product na classe acima.
     public void AddShopItens(Product p, int quant) {
@@ -34,19 +34,24 @@ public class ShoppingBasquet {
     }
 
     public String MostrarShopItens() {
-        String ShopItens = "";
-        for (ShoppingItem si : cestaDeCompras) {
-            ShopItens += si.toString();
-            ShopItens += "\n";
+        if(cestaDeCompras.size()>0){
+            String ShopItens = "";
+            for (ShoppingItem si : cestaDeCompras) {
+                ShopItens += si.toString();
+                ShopItens += "\n";
+            }
+            return ShopItens;
+        }else{
+            return "Cesta vazia\n";
         }
-        return ShopItens;
+            
     }
 
     public void apagarShopItens(Product p) {
         for (ShoppingItem si : cestaDeCompras) {
             if (si.equals((Object) p)) {
-                int quant = p.getQuantEmEstok();
-                p.setQuantEmEstok(quant + si.getQuant());
+                int quant = p.getQntEstk();
+                p.setQntEstk(quant + si.getQuant());
                 cestaDeCompras.remove(si);
             }
         }
@@ -59,19 +64,19 @@ public class ShoppingBasquet {
                 if (si.equals(p)) {
                     if (quant > 0) {
                         int siQuant = si.getQuant();
-                        p.setQuantEmEstok(p.getQuantEmEstok() + si.getQuant());
+                        p.setQntEstk(p.getQntEstk() + si.getQuant());
                         boolean flag;
                         flag = p.comprar(quant);
                         if (flag) {
                             si.setQuant(quant);
                         } else {
-                            p.setQuantEmEstok(p.getQuantEmEstok() - siQuant);
+                            p.setQntEstk(p.getQntEstk() - siQuant);
                             si.setQuant(siQuant);
                         }
                     } else if (quant == 0) {
                         //this.apagarShopItens(p);
-                        int quantEstk = p.getQuantEmEstok();
-                        p.setQuantEmEstok(quantEstk + si.getQuant());
+                        int quantEstk = p.getQntEstk();
+                        p.setQntEstk(quantEstk + si.getQuant());
                         cestaDeCompras.remove(si);
                     }
                     return true;

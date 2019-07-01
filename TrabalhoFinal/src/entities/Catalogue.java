@@ -17,7 +17,7 @@ import java.util.List;
  * @author durand
  */
 public class Catalogue {
-    List <Product> produtos = new ArrayList<>();
+    protected List <Product> produtos = new ArrayList<>();
     
     public Catalogue(){
         this.produtos = Catalogue.CriarArrayList();
@@ -45,12 +45,26 @@ public class Catalogue {
     }
     
     public String mostraItens(){
-        String itens = "";
-        for(Product p : produtos){
-            itens += p.toString();
-            itens += "\n";
+        if(produtos.size()>0){
+            String itens = "";
+            for(Product p : produtos){
+                itens += p.toString();
+                itens += "\n";
+            }
+            return itens;
+        }else{
+            return "Catalogo vazio\n";
         }
-        return itens;
+        
+    }
+    
+    public String toFile(){
+        String file = "";
+        for(Product p : produtos){
+                file += p.toString();
+                file += "\n";
+            }
+        return file;
     }
     
     public static ArrayList CriarArrayList(){

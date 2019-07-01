@@ -16,19 +16,19 @@ import java.io.IOException;
  * @author durand
  */
 public class Product {
-    public int id;
-    public String nome;
-    public String autor;
-    public double valor;
-    public int qntEstk;
-/*
-    public Product(int id, String nome, double valor, int quantEmEstok) {
+    protected int id;
+    protected String nome;
+    protected String autor;
+    protected double valor;
+    protected int qntEstk;
+
+    /*public Product(int id, String nome, double valor, int quantEmEstok) {
         this.id = id;
         this.nome = nome;
         this.valor = valor;
-        this.quantEmEstok = quantEmEstok;
-    }
-*/
+        this.qntEstk = quantEmEstok;
+    }*/
+
     public int getId() {
         return id;
     }
@@ -87,14 +87,14 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Producto{" 
+        return "Produto{" 
                 + "id = " + id 
                 + ", nome = " + nome 
                 + ", valor = " + valor 
                 + ", quantidade em estoque = " + qntEstk 
                 + '}';
     }
-    
+
      public void CriarProduto(String caminho, int c) {
 	try {
             FileReader arq = new FileReader(caminho);

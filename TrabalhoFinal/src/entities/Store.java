@@ -5,6 +5,7 @@
  */
 package entities;
 
+import java.io.BufferedWriter;
 import java.util.Scanner;
 
 /**
@@ -13,11 +14,12 @@ import java.util.Scanner;
  */
 public class Store {
 
-    Scanner input = new Scanner(System.in);
+    private Scanner input = new Scanner(System.in);
 
-    public String nome;
-    public ShoppingBasquet cesta;
-    public Catalogue catalogo;
+    protected String nome;
+    protected ShoppingBasquet cesta;
+    protected Catalogue catalogo;
+    private BufferedWriter gravar;
 
     public Store(String nome) {
         this.nome = nome;
@@ -60,6 +62,7 @@ public class Store {
         this.cesta.ModificarQuant(p, x);
     }
 
+    /*
     public void adicionarNoCatalogo() {
 
         int id;
@@ -80,12 +83,17 @@ public class Store {
         p = new Product(id, nomeProdc, valor, quantiEstk);
         this.catalogo.inserirItem(p);
     }
+    */
 
     public void fecharCompra() {
         ShoppingBasquet cestaFechada = this.cesta;
         this.cesta = null;
+        
         //chamar função para colocar a cesta no arquivo
         //e colocar o delivery;
     }
+    
+    
+
 
 }

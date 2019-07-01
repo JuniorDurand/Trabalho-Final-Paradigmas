@@ -11,13 +11,17 @@ package entities;
  */
 public class ShoppingItem {
 
-    public int id;
-    public int quant;
+    protected int id;
+    protected int quant;
+    protected String nome;
 
     public ShoppingItem(Product p, int quant) {
-        this.id = p.id;
+        this.id = p.getId();
         this.quant = quant;
+        this.nome = p.getNome();
     }
+    
+    
 
     public int getId() {
         return id;
@@ -40,7 +44,8 @@ public class ShoppingItem {
         return "ShoppingItem{"
                 + "id = " + this.id
                 + ", quantidade = " + this.quant
-                + '}';
+                + ", titulo = " + this.nome
+                + "}";
     }
 
 

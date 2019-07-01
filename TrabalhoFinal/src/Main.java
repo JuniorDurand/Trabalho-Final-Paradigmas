@@ -2,6 +2,7 @@
 import entities.Product;
 import entities.ShoppingItem;
 import entities.Store;
+import java.io.IOException;
 import java.util.Scanner;
 
 /*
@@ -36,10 +37,12 @@ public class Main {
             opcao = input.nextInt();
 
             switch (opcao) {
+                /*
                 case 1:
                     loja.adicionarNoCatalogo();
                     break;
-
+                */
+                
                 case 2:
                     System.out.println(loja.mostrarCatalogo());
                     break;
@@ -85,7 +88,10 @@ public class Main {
                     p = loja.procurarCatalogo(nome);
                     loja.ModificarCesta(p, quant);
                     loja.mostrarCesta();
-
+                    break;
+                    
+                case 0:
+                    
             }
 
         } while (opcao != 0);
