@@ -2,7 +2,6 @@
 import entities.Product;
 import entities.ShoppingItem;
 import entities.Store;
-import java.io.IOException;
 import java.util.Scanner;
 
 /*
