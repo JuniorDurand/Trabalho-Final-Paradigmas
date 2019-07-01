@@ -6,6 +6,11 @@
 
 package entities;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 /**
  *
  * @author durand
@@ -13,16 +18,17 @@ package entities;
 public class Product {
     public int id;
     public String nome;
+    public String autor;
     public double valor;
-    public int quantEmEstok;
-
+    public int qntEstk;
+/*
     public Product(int id, String nome, double valor, int quantEmEstok) {
         this.id = id;
         this.nome = nome;
         this.valor = valor;
         this.quantEmEstok = quantEmEstok;
     }
-
+*/
     public int getId() {
         return id;
     }
@@ -47,18 +53,28 @@ public class Product {
         this.valor = valor;
     }
 
-    public int getQuantEmEstok() {
-        return quantEmEstok;
+    public int getQntEstk(){
+        return qntEstk;
+    }
+    
+    public void setQntEstk(int qntEstk){
+        this.qntEstk = qntEstk;
     }
 
-    public void setQuantEmEstok(int quantEmEstok) {
-        this.quantEmEstok = quantEmEstok;
+    public String getAutor() {
+        return autor;
     }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+    
+    
     
     public boolean comprar(int quant){
         if(quant>0){
-            if(quant <= this.quantEmEstok){
-                this.quantEmEstok -= quant;
+            if(quant <= this.qntEstk){
+                this.qntEstk -= quant;
                 return true;
             }else{
                 System.out.println("Quantidade indisponivel");
@@ -75,10 +91,77 @@ public class Product {
                 + "id = " + id 
                 + ", nome = " + nome 
                 + ", valor = " + valor 
-                + ", quantidade em estoque = " + quantEmEstok 
+                + ", quantidade em estoque = " + qntEstk 
                 + '}';
     }
     
+     public void CriarProduto(String caminho, int c) {
+	try {
+            FileReader arq = new FileReader(caminho);
+            BufferedReader lerArq = new BufferedReader(arq);
+            String linha;
+            try {		
+		linha = lerArq.readLine();
+                for(int i=0; i<c; i++){
+                    linha = lerArq.readLine();
+                }	
+		if(linha!=null) {
+                    String[] palavra = linha.split(" ; ");
+                    this.setNome(palavra[0]);
+                    this.setAutor(palavra[1]);
+                    this.qntEstk=Integer.parseInt(palavra[2]);
+                    this.valor=Integer.parseInt(palavra[3]);
+                    this.id=Integer.parseInt(palavra[4]);
+                                                
+				}
+				
+				arq.close();
+				//return conteudo;
+			}catch (IOException ex) {
+				System.out.println("ERRO: AO LER O ARQUIVO");
+				//return "";
+			}
+		}catch (FileNotFoundException ex) {
+			System.out.println("ERRO: ARQUIVO NAO ENCONTRADO");
+			//return "";
+		}
+		
+        }
+     
+     public static int QntLivros(String caminho) {
+		//String conteudo = "";
+		int count=0;
+		try {
+			FileReader arq = new FileReader(caminho);
+			BufferedReader lerArq = new BufferedReader(arq);
+			String linha = "";
+			
+			try {
+				
+				while(linha != null) {
+                                    count++;
+                                    linha = lerArq.readLine();
+					
+					//System.out.println(count);
+				}
+				
+				arq.close();
+				//return conteudo;
+				
+				return count-1;
+				
+			}catch (IOException ex) {
+				System.out.println("ERRO: AO LER O ARQUIVO");
+				
+			}
+		}catch (FileNotFoundException ex) {
+			System.out.println("ERRO: ARQUIVO NAO ENCONTRADO");
+			
+		}
+		
+		return count;
+	}
+
     
     
 }

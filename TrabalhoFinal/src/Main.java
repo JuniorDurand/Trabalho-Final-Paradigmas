@@ -19,6 +19,8 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        
         Store loja = new Store("Minha Loja");
         Scanner input;
         String nome;
@@ -56,7 +58,10 @@ public class Main {
 
                 case 4:
                     System.out.println("Digite o nome do produto");
-                    nome = input.next();
+                    
+                    input.nextLine();
+                    nome = input.nextLine();
+                    //inpu
                     p = loja.procurarCatalogo(nome);
                     if (p != null) {
                         System.out.println(p.toString());

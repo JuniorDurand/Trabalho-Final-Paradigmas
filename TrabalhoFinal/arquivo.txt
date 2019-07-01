@@ -1,0 +1,4 @@
+Hamlet ; William Shakespeare ; 10 ; 9 ; 001
+Harry Potter ; J.K.Rowling ; 20 ; 12 ; 002
+As Mil e Uma Noites ; M Galland ; 15 ; 7 ; 003
+um crime quase perfeito ; Sidney ; 09 ; 20 ; 004

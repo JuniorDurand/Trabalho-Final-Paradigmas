@@ -19,6 +19,10 @@ import java.util.List;
 public class Catalogue {
     List <Product> produtos = new ArrayList<>();
     
+    public Catalogue(){
+        this.produtos = Catalogue.CriarArrayList();
+    }
+    
     public void inserirItem(Product p){
         produtos.add(p);
     }
@@ -49,5 +53,30 @@ public class Catalogue {
         return itens;
     }
     
-    
+    public static ArrayList CriarArrayList(){
+        int qnt = Product.QntLivros("arquivo.txt");
+        
+        
+        ArrayList<Product> listaLivros = new ArrayList<>();
+        int c = 0;
+        Product[] p = new Product[qnt];
+        for(int i=0; i<qnt; i++){
+            p[i] = new Product();
+            p[i].CriarProduto("arquivo.txt",c);
+            listaLivros.add(p[i]);
+            c++;
+        }
+        /*
+        for(int i=0; i<listaLivros.size(); i++){
+            System.out.println("");
+            System.out.print("titulo:"+ listaLivros.get(i).getNome());
+            System.out.print("  autor(a):"+ listaLivros.get(i).getAutor());
+            System.out.print("  quantidade:"+ listaLivros.get(i).getQntEstk());
+            System.out.print("  valor:"+ listaLivros.get(i).getValor());
+            System.out.print("  id:"+ listaLivros.get(i).getId());
+            System.out.println("");
+        }
+*/
+        return listaLivros;
+    }
 }
