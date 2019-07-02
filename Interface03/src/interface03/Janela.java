@@ -95,7 +95,7 @@ public class Janela extends javax.swing.JFrame {
         editCesta.addActionListener(actEditCest);
 
         finalizaCompra.setText("Finalizar Compra");
-        FinalizaAction actFinalizaCompra = new FinalizaAction(loja.getCesta(), this, loja.getCatalogo(), texto);
+        FinalizaAction actFinalizaCompra = new FinalizaAction(loja, this, texto);
         finalizaCompra.addActionListener(actFinalizaCompra);  
 
         finalizaCompra.setText("Finalizar Compra");

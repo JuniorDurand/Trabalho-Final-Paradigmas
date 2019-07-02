@@ -26,6 +26,11 @@ public class Store {
         cesta = new ShoppingBasquet();
         catalogo = new Catalogue();
     }
+    
+    public void newShoppingBasquest(){
+        this.cesta = null;
+        this.cesta = new ShoppingBasquet();
+    }
 
     public String getNome() {
         return nome;

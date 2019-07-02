@@ -8,6 +8,7 @@ package interface03;
 import entities.Catalogue;
 import entities.Delivery;
 import entities.ShoppingBasquet;
+import entities.Store;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -29,12 +30,22 @@ public class FinalizaAction implements ActionListener {
     protected JFrame j;
     protected Catalogue catalogo;
     protected JTextArea texto;
+    protected Store loja;
     
     public FinalizaAction(ShoppingBasquet cesta, JFrame j, Catalogue catalogo, JTextArea texto){
         this.catalogo = catalogo;
         this.cesta = cesta;
         this.j = j;
         this.texto = texto;
+        
+    }
+
+    public FinalizaAction(Store loja, JFrame j,  JTextArea texto){
+        this.catalogo = loja.getCatalogo();
+        this.cesta = loja.getCesta();
+        this.j = j;
+        this.texto = texto;
+        this.loja = loja;
         
     }
     
@@ -58,6 +69,8 @@ public class FinalizaAction implements ActionListener {
                     recibo += "\nProdutos: \n";
                     recibo += cesta.basquetToDelivery();
                     texto.setText(recibo);
+                    
+                    loja.newShoppingBasquest();
                     
                 }catch(NumberFormatException e){
                     JOptionPane.showMessageDialog(null, "Operação invalida");
