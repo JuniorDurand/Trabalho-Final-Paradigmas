@@ -79,7 +79,7 @@ public class Main extends JFrame{
         setVisible(true);
     }
     
-    public static void main(String[] args) {
+    public static void mainas(String[] args) {
         Store loja = new Store("Minha Loja");
         
         new Main(loja);
