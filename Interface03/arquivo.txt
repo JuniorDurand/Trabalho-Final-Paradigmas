@@ -1,2 +1,2 @@
-Hamlet ; Shakespeare ; 1 ; 7.0 ; 1
-Harry Potter ; J.K.Roling ; 14 ; 9.0 ; 7
+Hamlet ; Shakespeare ; 24 ; 7.0 ; 1
+Harry Potter ; J.K.Roling ; 36 ; 9.0 ; 7
