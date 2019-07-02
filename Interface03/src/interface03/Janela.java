@@ -20,6 +20,8 @@ public class Janela extends javax.swing.JFrame {
      */
     public Janela(Store loja) {
         this.loja = loja;
+        String nome = loja.getNome();
+        setTitle(nome);
         initComponents();
     }
 
@@ -205,7 +207,7 @@ public class Janela extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Store loja = new Store("Minha Loja");
+                Store loja = new Store("Minha Loja");//define o titulo da janela
                 new Janela(loja).setVisible(true);
             }
         });
