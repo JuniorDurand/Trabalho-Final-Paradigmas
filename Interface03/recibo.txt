@@ -1,0 +1,39 @@
+Cliente: Giovanna
+Endereço de entrega: endereço de giovanna 4
+Numero de telefone: 5555555
+ PRODUTOS:
+ id = 1, quantidade = 1, titulo = Hamlet , Total = 7.0
+
+
+ id = 7, quantidade = 1, titulo = Harry Potter , Total = 9.0
+
+
+Cliente: junior
+Endereço de entrega: durand
+Numero de telefone: 4
+ PRODUTOS:
+ id = 1, quantidade = 1, titulo = Hamlet , Total = 7.0
+
+
+Cliente: Thiago Wallass
+Endereço de entrega: Jardim américa
+Numero de telefone: 21
+ PRODUTOS:
+ id = 1, quantidade = 3, titulo = Hamlet , Total = 21.0
+
+
+Cliente: Durand
+Endereço de entrega: Angelim
+Numero de telefone: 9898889898
+ PRODUTOS:
+ id = 1, quantidade = 1, titulo = Hamlet , Total = 7.0
+
+
+ id = 7, quantidade = 1, titulo = Harry Potter , Total = 9.0
+
+
+Cliente: giovanna
+Endereço de entrega: denovo
+Numero de telefone: 9
+ PRODUTOS:
+ id = 1, quantidade = 1, titulo = Hamlet , Total = 7.0
