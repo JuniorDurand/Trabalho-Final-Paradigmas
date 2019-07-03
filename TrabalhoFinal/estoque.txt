@@ -1,0 +1,8 @@
+Hamlet ; William Shakespeare ; 10 ; 9 ; 001
+Harry Potter ; J.K.Rowling ; 20 ; 12 ; 002
+As Mil e Uma Noites ; M Galland ; 15 ; 7 ; 003
+um crime quase perfeito ; Sidney ; 09 ; 20 ; 004
+Produto{id = 1, nome = Hamlet, valor = 9.0, quantidade em estoque = 5}
+Produto{id = 2, nome = Harry Potter, valor = 12.0, quantidade em estoque = 20}
+Produto{id = 3, nome = As Mil e Uma Noites, valor = 7.0, quantidade em estoque = 15}
+Produto{id = 4, nome = um crime quase perfeito, valor = 20.0, quantidade em estoque = 9}
