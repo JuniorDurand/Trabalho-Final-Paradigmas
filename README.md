@@ -1,4 +1,4 @@
-# Trabalho-Paradigmas-Final
+# Trabalho Final Paradigmas
 
 Trabalho final da cadeira de Paradigmas de Programação ministrado no curso de ciência da computação na UFMA.
 
