@@ -87,12 +87,12 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Produto{" 
+        return "" 
                 + "id = " + id 
                 + ", nome = " + nome 
                 + ", valor = " + valor 
-                + ", quantidade em estoque = " + qntEstk 
-                + '}';
+                + ", quantidade em estoque = " + qntEstk
+                + ", autor = " + autor;
     }
 
      public void CriarProduto(String caminho, int c) {
@@ -110,7 +110,7 @@ public class Product {
                     this.setNome(palavra[0]);
                     this.setAutor(palavra[1]);
                     this.qntEstk=Integer.parseInt(palavra[2]);
-                    this.valor=Integer.parseInt(palavra[3]);
+                    this.valor=Double.parseDouble(palavra[3]);
                     this.id=Integer.parseInt(palavra[4]);
                                                 
 				}

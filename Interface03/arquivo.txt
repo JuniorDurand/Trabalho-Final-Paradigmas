@@ -1,6 +1,0 @@
-Hamlet ; Shakespeare ; 22 ; 7.99 ; 1
-Harry Potter ; J.K.Roling ; 36 ; 9.99 ; 7
-O andar do bêbado ; Leonard Mlodinow ; 15 ; 14.99 ; 8
-1984 ; Gerge Orwell ; 29 ; 19.99 ; 9
-Homo Deus ; Yuval Noah Harari ; 15 ; 19.99 ; 6
-A revolução dos bichos ; George Orwell ; 16 ; 24.99 ; 5

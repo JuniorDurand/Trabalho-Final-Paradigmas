@@ -26,6 +26,11 @@ public class Store {
         cesta = new ShoppingBasquet();
         catalogo = new Catalogue();
     }
+    
+    public void newShoppingBasquest(){
+        this.cesta = null;
+        this.cesta = new ShoppingBasquet();
+    }
 
     public String getNome() {
         return nome;
@@ -34,6 +39,16 @@ public class Store {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public ShoppingBasquet getCesta() {
+        return cesta;
+    }
+
+    public Catalogue getCatalogo() {
+        return catalogo;
+    }
+    
+    
 
     public String mostrarCatalogo() {
         return this.catalogo.mostraItens();
@@ -52,16 +67,19 @@ public class Store {
         return this.cesta.MostrarShopItens();
     }
 
-    public void adicionarNaCesta(Product p, int x) {
+    public boolean adicionarNaCesta(Product p, int x) {
         if (p.comprar(x)) {
             this.cesta.AddShopItens(p, x);
+            return true;
+        }else{
+            return false;
         }
     }
 
-    public void ModificarCesta(Product p, int x) {
-        this.cesta.ModificarQuant(p, x);
-    }
 
+    public boolean ModificarCesta(Product p, int x) {
+        return this.cesta.ModificarQuant(p, x);
+    }
     /*
     public void adicionarNoCatalogo() {
 

@@ -10,7 +10,8 @@ package entities;
  * @author durand
  */
 public class ShoppingItem {
-
+    
+    protected double valor;
     protected int id;
     protected int quant;
     protected String nome;
@@ -19,6 +20,7 @@ public class ShoppingItem {
         this.id = p.getId();
         this.quant = quant;
         this.nome = p.getNome();
+        this.valor = p.getValor();
     }
     
     
@@ -41,13 +43,24 @@ public class ShoppingItem {
 
     @Override
     public String toString() {
-        return "ShoppingItem{"
+        return ""
                 + "id = " + this.id
                 + ", quantidade = " + this.quant
                 + ", titulo = " + this.nome
-                + "}";
+                +", valor = " + this.valor
+                + "";
+                
     }
-
+    
+    public String toDelivery() {
+        return " "
+                + "id = " + this.id
+                + ", quantidade = " + this.quant
+                + ", titulo = " + this.nome
+                +" , Total = " + this.quant*this.valor
+                + "";
+                
+    }
 
     public boolean equals(Product obj) {
         if (obj == null) {

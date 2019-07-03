@@ -46,6 +46,21 @@ public class ShoppingBasquet {
         }
             
     }
+    
+    public String basquetToDelivery() {
+        if(cestaDeCompras.size()>0){
+            String ShopItens = "";
+            String newLine = System.getProperty("line.separator");
+            for (ShoppingItem si : cestaDeCompras) {
+                ShopItens += si.toDelivery();
+                ShopItens += newLine;
+            }
+            return ShopItens;
+        }else{
+            return "";
+        }
+            
+    }
 
     public void apagarShopItens(Product p) {
         for (ShoppingItem si : cestaDeCompras) {

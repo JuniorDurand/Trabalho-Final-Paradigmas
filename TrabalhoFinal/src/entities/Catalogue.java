@@ -6,6 +6,9 @@ package entities;
  * and open the template in the editor.
  */
 import entities.Product;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,6 +45,21 @@ public class Catalogue {
             }
         }
         return null;
+    }
+    
+    public void Atualizar() throws IOException{
+        try ( 
+            FileWriter arq = new FileWriter("arquivo.txt")) {
+            PrintWriter gravarArq = new PrintWriter(arq);
+ 
+            for(Product p : produtos){
+                gravarArq.printf(p.getNome());
+                gravarArq.printf(" ; "+p.getAutor());
+                gravarArq.printf(" ; "+p.getQntEstk());
+                gravarArq.printf(" ; "+p.getValor());
+                gravarArq.printf(" ; "+p.getId()+"\n");
+            }
+        }
     }
     
     public String mostraItens(){
