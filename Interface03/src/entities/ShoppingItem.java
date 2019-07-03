@@ -43,12 +43,12 @@ public class ShoppingItem {
 
     @Override
     public String toString() {
-        return "ShoppingItem{"
+        return ""
                 + "id = " + this.id
                 + ", quantidade = " + this.quant
                 + ", titulo = " + this.nome
                 +", valor = " + this.valor
-                + "}";
+                + "";
                 
     }
     

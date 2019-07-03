@@ -87,12 +87,12 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Produto{" 
+        return "" 
                 + "id = " + id 
                 + ", nome = " + nome 
                 + ", valor = " + valor 
-                + ", quantidade em estoque = " + qntEstk 
-                + '}';
+                + ", quantidade em estoque = " + qntEstk
+                + ", autor = " + autor;
     }
 
      public void CriarProduto(String caminho, int c) {
